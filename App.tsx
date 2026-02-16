@@ -20,19 +20,17 @@ export default () => {
   }, [init]);
 
   return (
-    <SafeAreaView>
-      <AccessContext
-        appId="CknhMIMaTpNFRkEfkXB6d7EIZBQl4VPuPQgTlaChiulgdVeURmHlLBMeGu8wgJiF"
-        config={{ cookiesEnabled: true }}
-      >
-        <Snippet>
-          <Text>Synopsis</Text>
-        </Snippet>
-        <RestrictedContent>
-          <Text>Full content</Text>
-        </RestrictedContent>
-        <Paywall />
-      </AccessContext>
-    </SafeAreaView>
+    <AccessContext
+      appId="CknhMIMaTpNFRkEfkXB6d7EIZBQl4VPuPQgTlaChiulgdVeURmHlLBMeGu8wgJiF"
+      config={{ cookiesEnabled: true, debug: true }}
+    >
+      <Snippet>
+        <Text>Synopsis</Text>
+      </Snippet>
+      <RestrictedContent>
+        <Text>Full content</Text>
+      </RestrictedContent>
+      <Paywall config={{ debug: true }} />
+    </AccessContext>
   );
 };
